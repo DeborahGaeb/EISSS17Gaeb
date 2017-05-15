@@ -1,0 +1,26 @@
+{
+  "name": "sportyside",
+  "version": "1.0.1",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeborahGaeb/EISSS17Gaeb.git"
+  },
+  "author": "Deborah Gaeb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DeborahGaeb/EISSS17Gaeb/issues"
+  },
+  "homepage": "https://github.com/DeborahGaeb/EISSS17Gaeb#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "http": "0.0.0",
+    "jsonparser": "^1.0.1",
+    "redis": "^2.7.1"
+  }
+}
