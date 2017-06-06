@@ -1,4 +1,4 @@
-
+ 
 public class QuizAntwort{
     // Entsanzvariablen der Klasse Quizantwort
     private String antworttext;
