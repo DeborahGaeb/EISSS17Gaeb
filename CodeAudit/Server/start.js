@@ -74,4 +74,4 @@ var listen = app.listen(portHTTP, function () {
 var socket = io.listen(listen);
 
 //Die Router werden festgelegt.
-require('./routes/routes')(app, socket, datenbank, redis, jwt, Promise, apiRoutes);
+require('./routes/routes',(app, socket, datenbank, redis, jwt, Promise, apiRoutes));

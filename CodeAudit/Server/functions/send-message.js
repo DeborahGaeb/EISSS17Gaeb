@@ -11,7 +11,7 @@ exports.sendMassage = function (message, registrationIDs, callback) {
 		console.log("reqtoken", reqTokens);
 
 		var sender = new gcm.Sender(contants.gcm_api_key);
-		sender.send(message{registrationIDs: regTokens}, function (err, res) {
+		sender.send(message, { registratinTokens: regTokens}, function (err, res) {
 			if (err) {
 				console.error(err);
 				callback(constants.error.msg_send_failure);

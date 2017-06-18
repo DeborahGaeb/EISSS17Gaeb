@@ -1,7 +1,7 @@
 //Funktion einbinden und Argon
-var devicesFunction = require('../funktions/devices');
-var sendFunction = require('../funktions/send-message');
-var constrants = require('..s/constrants/constrants.json');
+var devicesFunction = require('../functions/devices');
+var sendFunction = require('../functions/send-message');
+var constrants = require('../constrants/constrants.json');
 var argon2 = require('argon2');
 
 //Funktion, die  die Daten des Benutzers aktualiersieren.
@@ -68,10 +68,12 @@ exports.updateUserdata = (function (datenbank) {
 			res.status(400).end;
 		}
 	}
-}
+});
 
+/*
 exports.deleteUserdata = function (datenbank) {
 	return function (req, res) {
 		//TODO
 	}
 }
+*/

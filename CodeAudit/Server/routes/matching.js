@@ -1,4 +1,5 @@
 exports.match = function (datenbankm Promise) {
+
   return function (req, res) {
     var Verein_IDS = [];
     var Sportstudio_IDS = [];

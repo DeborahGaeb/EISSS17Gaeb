@@ -2,9 +2,9 @@ var constants = require('../constrants/constrants.json');
 
 //Funktion zum Authentifizierung eines Benutzers
 
-exports.auth = function (app, datenbank, redis, jwt,) {
+exports.auth = function (app, datenbank, redis, jwt) {
 	return function (req, res) {
-		console.log('REQ Body: ' reg.body);
+		console.log('REQ Body: ', reg.body);
 
 		var emaildata = req.body.email;
 		var username  = req.body.username;
@@ -26,7 +26,7 @@ exports.auth = function (app, datenbank, redis, jwt,) {
 
 		// Username aus der Datenbank holen
 		else if (username) {
-			getDatenbank(username, datenbank).then(function(reply)){
+			getDatenbank(username, datenbank).then(function(reply){
 				userID = reply;
 				if(userID == 0) res.status(400).end();
 				return userID
@@ -52,14 +52,14 @@ function makeToken (userID, datenbank, reqPassword, res, jwt) {
 		var userDataJSON = JSON.parse(reply);
 		argon2.verify(userDataJSON.password, reqPassword).then(() => {
 			console.log('Das Passwort wurder erfolgreich übermittelt!');
-			var token 0 jwt.sign(userID,
+			var token = jwt.sign(userID,
 			app.get('superSecret'));
 
 			res.json({
 				wohnort: userDataJSON.wohnwort,
 				userID: userID,
 				success: true,
-				token: token;
+				token: token,
 				username: userDataJSON.username}).status(200).end();
 		}).catch(() => {
 			console.log('Ungueltiges Password uebermittelt!');

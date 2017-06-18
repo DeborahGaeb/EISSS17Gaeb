@@ -22,8 +22,8 @@ exports.register = function (uid, registreationsID, wohnort, datenbank, callback
 	});
 
 	function checkSET (set, data) {
-		var  [];
-		promises.push(db.SISMENBERAsync(setm data));
+		var  promises = [];
+		promises.push(db.SISMENBERAsync(set, data));
 
 		return Promise.all(promises).then(function(arrayOfResults){
 			return arrayOfResult[0];
