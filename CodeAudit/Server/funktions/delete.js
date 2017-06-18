@@ -1,5 +1,5 @@
-var constants = require('../constants/constants.json');
- 
+var constants = require('../constrants/constrants.json');
+
 exports.removeDevice = function(registrationId, wohnort, datenbank, callback){
 	console.log("DELETE DEVICE:  " + registrationId);
 	var result = datenbank.SREM(wohnort + "regids", registrationId);

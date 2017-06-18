@@ -1,6 +1,6 @@
 {
 	"gcm_api_key": "AIzaSyAqlk0X07FW7kdinz7fTPtXB1Lk0kUwUg4",
-	
+
 	"error" : {
 		"msg_invalid_param" : {
 			"result": "error",
@@ -16,38 +16,37 @@
 	 	"result": "error",
 		"message": "Registration ist fehlgeschlagen."
 	},
-	
+
 	"msg_reg_exists": {
  		"result"    :"error",
 		"message"    :"Das Device ist schon registriert."
 	},
- 
+
 	"msg_del_failure" : {
  		"result" : "error",
 		"message" : "Das Device ist es nicht möglich zu ersetzen"
- 
 		},
- 
+
 	"msg_send_failure": {
  		"result" : "error",
 		"message" : "Die Nachricht konnte nicht gesendet werden."
  	},
- 
- 
+
+ 	
 	"success" : {
 		"msg_reg_success": {
  			"result"    : "success",
 			"message"   : "Device wurde erfolgreich registriert."
  		},
- 
+
 		 "msg_del_success"  : {
 			"result" :  "success",
 			"message" : "Device wurde erfolgreich entfernt."
 		 },
- 
+
 		 "msg_send_success"  : {
 			"result" :  "success",
 			"message" : "Die Nachrichti wurde erfolgreich gesendet!"
-		}
-	}		
-}
+		},
+	},
+},

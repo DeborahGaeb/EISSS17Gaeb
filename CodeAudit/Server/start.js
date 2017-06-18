@@ -1,7 +1,7 @@
-//Modulle 
+//Module
 //Modul https und http
 var http	= require('http');
-var https	= require('https');
+//var https	= require('https');
 var fs		= require('fs');
 
 const express 		= require('express');
@@ -17,7 +17,7 @@ const app			= express();
 var io				= require('socket.io');
 var apiRoutes		= express.Router();
 
-//Ports für http und https 
+//Ports für http und https
 const portHTTP		= 3000
 //const portHTTPs		= 3001
 
@@ -26,6 +26,7 @@ var options = {
 	key:  fs.readFileSync('./https/server.key'),
 	cert: fs.readFileSync('/https/server.crt')
 };
+
 */
 // Konfigution der Datenbank Redis
 var Promise	= require('bluebird');
@@ -43,7 +44,7 @@ app.set('superSecret', config.secret);
 var env = process.env.NODE_ENV || 'devolopment';
 if ('development' == env){
 	app.use(express.static(__dirname + '/public'));
-	
+
 	app.use(function (err, req, res, next) {
 		console.error(err.stack);
 		res.end(err.status + '' + err.message);
@@ -73,4 +74,4 @@ var listen = app.listen(portHTTP, function () {
 var socket = io.listen(listen);
 
 //Die Router werden festgelegt.
-require('.(routes/routes')(app, socket, datenbank, redis, jwt, Promise, apiRoutes);
+require('./routes/routes')(app, socket, datenbank, redis, jwt, Promise, apiRoutes);

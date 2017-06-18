@@ -1,29 +1,29 @@
-var constants = require('../constants/constants.json');
+var constants = require('../constrants/constrants.json');
 
 //Funktion zum Authentifizierung eines Benutzers
 
 exports.auth = function (app, datenbank, redis, jwt,) {
 	return function (req, res) {
 		console.log('REQ Body: ' reg.body);
-		
+
 		var emaildata = req.body.email;
 		var username  = req.body.username;
 		var reqPassword = req.body.password;
 		var userID = "";
-		
-		//Ueberpruefen die eine User sich anmelden kann 
+
+		//Ueberpruefen die eine User sich anmelden kann
 		if (typeof emaildata == 'undefined' && typeof username == 'undefined' || typeof reqPassword == 'undefined'){
-			
+
 			console.log(constants.error.msg_invalid_param.message);
 			res.status(400).end();
 		}
-		
+
 		// Was passiert wenn es nicht klappt
 		else if(!emaildata.trim() && !username.trim() || !reqPassword.trim()){
 			console.log('constants.error.msg_empty_param.message');
 			res.status(400).end();
 		}
-		
+
 		// Username aus der Datenbank holen
 		else if (username) {
 			getDatenbank(username, datenbank).then(function(reply)){
@@ -33,8 +33,8 @@ exports.auth = function (app, datenbank, redis, jwt,) {
 			}).then(function (userID) {
 				makeToken(userID, datenbank, reqPassword, app, res, jwt);
 			});
-		}	
-	}	
+		}
+	}
 };
 
 // Funktion um asynchron etwas aus der DAtenban zu holen
@@ -54,11 +54,11 @@ function makeToken (userID, datenbank, reqPassword, res, jwt) {
 			console.log('Das Passwort wurder erfolgreich übermittelt!');
 			var token 0 jwt.sign(userID,
 			app.get('superSecret'));
-			
+
 			res.json({
 				wohnort: userDataJSON.wohnwort,
 				userID: userID,
-				success: true, 
+				success: true,
 				token: token;
 				username: userDataJSON.username}).status(200).end();
 		}).catch(() => {
@@ -67,8 +67,3 @@ function makeToken (userID, datenbank, reqPassword, res, jwt) {
 		});
 	});
 };
-
-
-
-
-

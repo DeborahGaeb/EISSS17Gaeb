@@ -1,15 +1,15 @@
 var gcm = require('node-gcm');
-var constants = require('../constants/constants.json');
+var constants = require('../constrants/constrants.json');
 
 //Sendet für jede RegistrationsID aus dem Array RegistrationsIDs eine Benachrichtigung
 
 exports.sendMassage = function (message, registrationIDs, callback) {
 	var message = new gcm.Message({data: {message: message}});
-	
+
 	for (i = 0; i < registrationIDs.length; i++){
 		var regTokens = [registrationIDs[i]];
 		console.log("reqtoken", reqTokens);
-		
+
 		var sender = new gcm.Sender(contants.gcm_api_key);
 		sender.send(message{registrationIDs: regTokens}, function (err, res) {
 			if (err) {
@@ -22,4 +22,4 @@ exports.sendMassage = function (message, registrationIDs, callback) {
 			}
 		});
 	}
-} 
+}
