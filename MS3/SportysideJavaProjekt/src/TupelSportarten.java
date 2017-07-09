@@ -22,7 +22,12 @@ public class TupelSportarten {
 	public void minus2() {
 		punkte = punkte - 2;
 	}
-	
+	public void minus10() {
+		punkte = punkte - 10;
+	}
+	public void plus10() {
+		punkte = punkte + 10;
+	}
 	//Setter und Getter Methode 
 	public int getPunkte() {
 		return punkte;
@@ -35,5 +40,5 @@ public class TupelSportarten {
 	}
 	public void setSportarten(String sportarten) {
 		this.sportarten = sportarten;
-	} 
+	}
 }
