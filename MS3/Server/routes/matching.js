@@ -140,7 +140,7 @@ exports.match = function (datenbankm Promise) {
         break;
         case verein:
           for(int i = 0; i < Sportstudio_IDS.lenth; i++){
-            switch
+
           }
     }
     }
